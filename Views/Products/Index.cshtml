@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Task1.Models.Product>
+
+<h2>Available Products</h2>
+
+<form method="get">
+    <input type="text" name="name" placeholder="Search by name..." value="@Context.Request.Query["name"]" />
+    <input type="number" name="supplierId" placeholder="Supplier ID" value="@Context.Request.Query["supplierId"]" />
+    <button type="submit">Search</button>
+</form>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Supplier</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Name</td>
+                <td>@p.Category</td>
+                <td>@p.Price.ToString("C")</td>
+                <td>@p.StockQuantity</td>
+                <td>@p.Supplier?.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>

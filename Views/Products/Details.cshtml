@@ -1,0 +1,33 @@
+﻿@using Task1.Models.Products
+@model ProductDetailsViewModel
+
+<h2>Product Details</h2>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <td>@Model.Name</td>
+    </tr>
+    <tr>
+        <th>Price</th>
+        <td>@Model.Price</td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td>@Model.Description</td>
+    </tr>
+    <tr>
+        <th>Category</th>
+        <td>@Model.Category</td>
+    </tr>
+    <tr>
+        <th>Stock Quantity</th>
+        <td>@Model.StockQuantity</td>
+    </tr>
+    <tr>
+        <th>Supplier Name</th>
+        <td>@Model.SupplierName</td>
+    </tr>
+</table>
+
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>
